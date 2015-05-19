@@ -184,108 +184,108 @@ public class ConsultantProjectGenerator {
 		c.setTitle(2);
 		consultants.add(c);
 		
-		// Citi Project 1
+		// Client1Project 1
 		
 		r = new Role();
-		r.setProjectId("Citi Project 1");
+		r.setProjectId("Client1Project 1");
 		r.setRoleType(1);
 		r.setWeeklyHours(40);
 		roles.add(r);
 		
 		r = new Role();
-		r.setProjectId("Citi Project 1");
+		r.setProjectId("Client1Project 1");
 		r.setRoleType(1);
 		r.setWeeklyHours(40);
 		roles.add(r);
 		
 		r = new Role();
-		r.setProjectId("Citi Project 1");
+		r.setProjectId("Client1Project 1");
 		r.setRoleType(2);
 		r.setWeeklyHours(40);
 		roles.add(r);
 		
 		r = new Role();
-		r.setProjectId("Citi Project 1");
+		r.setProjectId("Client1Project 1");
 		r.setRoleType(2);
 		r.setWeeklyHours(40);
 		roles.add(r);
 		
 		r = new Role();
-		r.setProjectId("Citi Project 1");
+		r.setProjectId("Client1Project 1");
 		r.setRoleType(3);
 		r.setWeeklyHours(20);
 		roles.add(r);
 		
 		r = new Role();
-		r.setProjectId("Citi Project 1");
+		r.setProjectId("Client1Project 1");
 		r.setRoleType(4);
 		r.setWeeklyHours(5);
 		roles.add(r);
 		
-		// Citi Project 2
+		// Client1Project 2
 		
 		r = new Role();
-		r.setProjectId("Citi Project 2");
+		r.setProjectId("Client1Project 2");
 		r.setRoleType(1);
 		r.setWeeklyHours(40);
 		roles.add(r);
 		
 		r = new Role();
-		r.setProjectId("Citi Project 2");
+		r.setProjectId("Client1Project 2");
 		r.setRoleType(1);
 		r.setWeeklyHours(40);
 		roles.add(r);
 		
 		r = new Role();
-		r.setProjectId("Citi Project 1");
+		r.setProjectId("Client1Project 1");
 		r.setRoleType(4);
 		r.setWeeklyHours(5);
 		roles.add(r);
 		
-		// Cigna Project 1
+		// Client2 Project 1
 		
 		r = new Role();
-		r.setProjectId("Cigna Project 1");
+		r.setProjectId("Client2 Project 1");
 		r.setRoleType(2);
 		r.setWeeklyHours(40);
 		roles.add(r);
 		
 		r = new Role();
-		r.setProjectId("Cigna Project 1");
+		r.setProjectId("Client2 Project 1");
 		r.setRoleType(4);
 		r.setWeeklyHours(5);
 		roles.add(r);
 		
-		// Cigna Project 2
+		// Client2 Project 2
 		
 		r = new Role();
-		r.setProjectId("Cigna Project 2");
+		r.setProjectId("Client2 Project 2");
 		r.setRoleType(3);
 		r.setWeeklyHours(40);
 		roles.add(r);
 		
 		r = new Role();
-		r.setProjectId("Cigna Project 2");
+		r.setProjectId("Client2 Project 2");
 		r.setRoleType(4);
 		r.setWeeklyHours(5);
 		roles.add(r);
 		
-		// AAP Project 1
+		// Client3 Project 1
 		
 		r = new Role();
-		r.setProjectId("AAP Project 1");
+		r.setProjectId("Client3 Project 1");
 		r.setRoleType(1);
 		r.setWeeklyHours(40);
 		roles.add(r);
 		
 		r = new Role();
-		r.setProjectId("AAP Project 1");
+		r.setProjectId("Client3 Project 1");
 		r.setRoleType(1);
 		r.setWeeklyHours(40);
 		roles.add(r);
 		
 		r = new Role();
-		r.setProjectId("AAP Project 1");
+		r.setProjectId("Client3 Project 1");
 		r.setRoleType(1);
 		r.setWeeklyHours(40);
 		roles.add(r);
