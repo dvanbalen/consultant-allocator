@@ -45,6 +45,15 @@ rule "underqualifiedConsultant"
 		scoreHolder.addSoftConstraintMatch(kcontext, $t - $rt);
 end
 
+rule "overqualifiedConsultant"
+	when
+		$role : Role($c : consultant, $rt : roleType )
+		Consultant(this == $c, $t : title > $rt)
+	then
+		System.out.println("Consultant "+$c.getName()+" is underqualified for role "+$role);
+		scoreHolder.addSoftConstraintMatch(kcontext, $rt - $t);
+end
+
 rule "preferArchRoleForArchitect"
 	when
 		$role : Role($c : consultant, $rt : roleType == 3 )
