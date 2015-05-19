@@ -1,0 +1,56 @@
+package com.redhat.consulting.planner.solver;
+    dialect "java"
+
+import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScoreHolder;
+
+import com.redhat.consulting.planning.fact.Consultant;
+import com.redhat.consulting.planning.fact.Role;
+import com.redhat.consulting.planning.fact.ConsultingPractice;
+
+global HardSoftScoreHolder scoreHolder;
+
+// #### Hard Constraints ####
+
+rule "overcommittedConsultant"
+    when
+        $consultant : Consultant($hours : hoursPerWeek)
+        $weeklyCommitment : Number(intValue > $hours) from accumulate(
+            Role(
+                consultant == $consultant,
+                $weeklyHours : weeklyHours),
+            sum($weeklyHours)
+        )
+    then
+    	System.out.println("Adding hard constraint of "+$weeklyCommitment.intValue()+" for consultant "+$consultant.getName()+" committed for "+$weeklyCommitment.intValue()+" hours.");
+        scoreHolder.addHardConstraintMatch(kcontext, $hours - $weeklyCommitment.intValue());
+end
+
+rule "placeSDMInSDMRole"
+	when
+		$role : Role($c : consultant, $rt : roleType == 4 )
+		Consultant(this == $c, $t : title != $rt )
+	then
+    	System.out.println("Adding hard constraint of -1 for non-SDM consultant "+$c.getName()+" with title "+$c.getTitle()+" for role "+$role);
+		scoreHolder.addHardConstraintMatch(kcontext, -1);
+end
+
+// #### Soft Constraints ####
+
+rule "underqualifiedConsultant"
+	when
+		$role : Role($c : consultant, $rt : roleType )
+		Consultant(this == $c, $t : title < $rt)
+	then
+		System.out.println("Consultant "+$c.getName()+" is underqualified for role "+$role);
+		scoreHolder.addSoftConstraintMatch(kcontext, $t - $rt);
+end
+
+rule "preferArchRoleForArchitect"
+	when
+		$role : Role($c : consultant, $rt : roleType == 3 )
+		Consultant(this == $c, $t : title != $rt )
+	then
+		
+		System.out.println("Architect "+$c.getName()+" with title "+$c.getTitle()+" assigned to role other than Architect");
+		scoreHolder.addSoftConstraintMatch(kcontext, -5);
+end

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<solver>
+	<solutionClass>com.redhat.consulting.planning.fact.ConsultingPractice</solutionClass>
+	<entityClass>com.redhat.consulting.planning.fact.Role</entityClass>
+	
+	<scoreDirectorFactory>
+		<scoreDefinitionType>HARD_SOFT</scoreDefinitionType>
+		<scoreDrl>consultantAllocator.drl</scoreDrl>
+		<initializingScoreTrend>ONLY_DOWN</initializingScoreTrend>
+	</scoreDirectorFactory>
+	
+	<constructionHeuristic>
+		<constructionHeuristicType>FIRST_FIT</constructionHeuristicType>
+	</constructionHeuristic>
+	
+	<termination>
+		<secondsSpentLimit>120</secondsSpentLimit>
+	</termination>
+	
+	<localSearch>
+		<acceptor>
+			<entityTabuSize>7</entityTabuSize>
+		</acceptor>
+		<forager>
+			<acceptedCountLimit>1000</acceptedCountLimit>
+		</forager>
+	</localSearch>
+
+</solver>
